@@ -1,3 +1,5 @@
+<!-- banner --><a href="https://github.com/kenmwara"><img src="https://raw.githubusercontent.com/kenmwara/kenmwara/main/assets/brand/card-tor.png?v=0a303113" width="100%" alt="Unauthorized Tor: A portable Tor Browser on a lab endpoint, hunted back out of Defender telemetry and an investigation package. 3 Tor relays traced on 443."></a>
+
 # Threat Hunt Report: Unauthorized Tor Usage
 
 A [Cyber Range](https://www.skool.com/cyber-range) threat-hunting project, run end to end on my own lab VM: I generated
