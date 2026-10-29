@@ -131,7 +131,7 @@ four hours earlier. Only the second one contains:
 | 05:45:41 | Analyst collects a Defender investigation package |
 | 07:21:10 | Last writes to the Tor Browser profile: the browser is closed |
 
-## Detection gaps found
+## Gaps in alerts found
 
 - **Port-based rules miss modern Tor.** All relay traffic went to 443. Detect on the process (`tor.exe` running from a
   user-writable path), the parent chain (browser → installer → firefox → tor), or known-relay threat intelligence.
@@ -147,7 +147,7 @@ four hours earlier. Only the second one contains:
   execution of unsigned binaries from user profile paths (for example with WDAC or AppLocker).
 - The detection rules above are candidates for a custom detection in Defender.
 
-## MITRE ATT&CK
+## Attacker techniques seen (MITRE ATT&CK)
 
 - **T1090.003** Proxy: Multi-hop Proxy (Tor)
 - **T1573** Encrypted Channel
