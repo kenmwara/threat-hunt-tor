@@ -8,7 +8,7 @@ investigation package using the same process as a production endpoint investigat
 
 ## Key takeaways
 
-<img src="images/scorecard.png" width="100%" alt="Key takeaways. Portable Tor Browser on a lab endpoint, traced from telemetry. 3: Tor relays over port 443. A full circuit built from the user's Desktop copy of Tor Browser. ≈1 h 40 m: Session length. About 05:41 to 07:21 UTC on kk-mde-win11. 0: Sites identifiable. Tor resolves DNS inside the encrypted circuit; the endpoint cache held nothing. 3: MDE tables correlated. File, process and network events, plus a Defender investigation package.">
+<img src="images/scorecard.png" width="100%" alt="Key takeaways. Hidden web browsing on a test computer, traced from security logs. 3: Hops to hide the traffic. The Tor browser sent the traffic through three relays, over a normal web port. ≈1 h 40 m: How long it ran. From about 05:41 to 07:21 UTC. 0: Websites that can be named. Tor hides which sites were visited, and the computer kept no trace of them. 3: Kinds of evidence combined. File, program and network records, plus a full evidence package from the computer.">
 
 ## Executive summary
 
