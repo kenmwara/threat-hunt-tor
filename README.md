@@ -6,6 +6,10 @@ A [Cyber Range](https://www.skool.com/cyber-range) threat-hunting exercise: unau
 generated on a dedicated lab VM, then investigated from Microsoft Defender for Endpoint (MDE) telemetry and a Defender
 investigation package using the same process as a production endpoint investigation.
 
+## Key takeaways
+
+<img src="images/scorecard.png" width="100%" alt="Key takeaways. Portable Tor Browser on a lab endpoint, traced from telemetry. 3: Tor relays over port 443. A full circuit built from the user's Desktop copy of Tor Browser. ≈1 h 40 m: Session length. About 05:41 to 07:21 UTC on kk-mde-win11. 0: Sites identifiable. Tor resolves DNS inside the encrypted circuit; the endpoint cache held nothing. 3: MDE tables correlated. File, process and network events, plus a Defender investigation package.">
+
 ## Executive summary
 
 User `kk` on `kk-mde-win11` downloaded the portable Tor Browser, ran it from the Desktop, and built a Tor circuit
