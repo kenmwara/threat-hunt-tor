@@ -2,9 +2,18 @@
 
 # Threat Hunt Report: Unauthorized Tor Usage
 
-A [Cyber Range](https://www.skool.com/cyber-range) threat-hunting project, run end to end on my own lab VM: I generated
-the activity, then hunted it back out of Microsoft Defender for Endpoint (MDE) telemetry and a Defender investigation
-package, the way an analyst would on a real endpoint.
+A [Cyber Range](https://www.skool.com/cyber-range) threat-hunting exercise: unauthorized Tor Browser activity was
+generated on a dedicated lab VM, then investigated from Microsoft Defender for Endpoint (MDE) telemetry and a Defender
+investigation package using the same process as a production endpoint investigation.
+
+## Executive summary
+
+User `kk` on `kk-mde-win11` downloaded the portable Tor Browser, ran it from the Desktop, and built a Tor circuit
+through three relays over port 443. The session lasted from about 05:41 to 07:21 UTC.
+
+What the evidence does **not** show: which sites were visited. Tor carries its own DNS inside the encrypted circuit,
+so the endpoint's DNS cache held nothing, and the traffic content is encrypted end to end. No text files (for example a
+notes or "shopping list" file) were created or deleted on the Desktop during the session.
 
 ## Platforms and tools
 
@@ -94,7 +103,7 @@ A hunt that only watched ports 9001/9050 would have missed all three connections
 
 ### 5. Investigation package: confirming it on the host
 
-At 05:45:41 I collected a Defender investigation package from the device and compared it with a clean package taken
+At 05:45:41 a Defender investigation package was collected from the device and compared it with a clean package taken
 four hours earlier. Only the second one contains:
 
 - **Prefetch** entries for `TOR-BROWSER-WINDOWS-X86_64-PO…pf`, `TOR.EXE…pf` and `FIREFOX.EXE…pf`, which prove the
@@ -117,15 +126,6 @@ four hours earlier. Only the second one contains:
 | 05:41:55–58 | `tor.exe` connects to 3 relays on port 443 |
 | 05:45:41 | Analyst collects a Defender investigation package |
 | 07:21:10 | Last writes to the Tor Browser profile: the browser is closed |
-
-## Summary
-
-User `kk` on `kk-mde-win11` downloaded the portable Tor Browser, ran it from the Desktop, and built a Tor circuit
-through three relays over port 443. The session lasted from about 05:41 to 07:21 UTC.
-
-What the evidence does **not** show: which sites were visited. Tor carries its own DNS inside the encrypted circuit,
-so the endpoint's DNS cache held nothing, and the traffic content is encrypted end to end. No text files (for example a
-notes or "shopping list" file) were created or deleted on the Desktop during the session.
 
 ## Detection gaps found
 
@@ -151,5 +151,5 @@ notes or "shopping list" file) were created or deleted on the Desktop during the
 
 ---
 
-*Lab note: this was my own Azure lab VM in the Cyber Range. The "suspicious user" is me: I generated the activity on
-purpose, then hunted it back out as if I didn't know what had happened.*
+*Lab note: the activity was generated deliberately on a dedicated Azure lab VM in the Cyber Range and investigated
+without reference to the generation steps.*
