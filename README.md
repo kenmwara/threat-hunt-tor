@@ -1,4 +1,4 @@
-<!-- banner --><a href="https://github.com/kenmwara"><img src="https://raw.githubusercontent.com/kenmwara/kenmwara/main/assets/brand/card-tor.png?v=80a313f11b" width="100%" alt="Unauthorized Tor: A portable Tor Browser on a lab endpoint, hunted back out of Defender telemetry and an investigation package. 3 Tor relays traced on 443."></a>
+<!-- banner --><a href="https://github.com/kenmwara"><img src="https://raw.githubusercontent.com/kenmwara/kenmwara/main/assets/brand/card-tor.png?v=bee27ad413" width="100%" alt="Unauthorized Tor: A portable Tor Browser on a lab endpoint, hunted back out of Defender telemetry and an investigation package. 3 Tor relays traced on 443."></a>
 
 # Threat Hunt Report: Unauthorized Tor Usage
 
